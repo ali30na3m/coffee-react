@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Dana";
+    src: local("Dana"), url(../src/fonts/Dana/woff2/DanaFaNum-Regular.woff2);
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Dana Madium";
+    src: local("Dana Madium"), url(../src/fonts/Dana/woff2/DanaFaNum-Medium.woff2);
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Dana DemiBold";
+    src: local("Dana Bold"), url(../src/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2);
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Morabba";
+    src: local("Morabba"), url(../src/fonts/Morabba/woff2/Morabba-Medium.woff2);
+  }
+
+  @font-face {
+    font-family: "Morabba Light";
+    src: local("Morabba Light"), url(../src/fonts/Morabba/woff2/Morabba-Light.woff2);
+  }
+
+  @font-face {
+    font-family: "Morabba Bold";
+    src: local("Morabba Bold"), url(../src/fonts/Morabba/woff2/Morabba-Bold.woff2);
+  }
+
+  html.dark .product {
+    background-image: url(../public/Images/product-bg.png);
+  }
+
+  .product {
+    background: linear-gradient(rgba(243, 244, 246, 0.65), rgba(243, 244, 246, 0.65)), url(../public/Images/product-bg.png);
+    background-repeat: no-repeat;
+  }
+
+  .categoryBanner--Item1 {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url(../public/Images/categories/category-right.jpg);
+    background-repeat: no-repeat;
+  }
+
+  .categoryBanner--Item2 {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url(../public/Images/categories/category-left.jpg);
+    background-repeat: no-repeat;
+  }
+
+  .service {
+    position: relative;
+  }
+
+  .service::after,
+  .service::before {
+    display: block;
+    content: "";
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    background-color: #D1D5DB;
+  }
+
+  html.dark .service::after,
+  html.dark .service::before {
+    background-color: #FFFFFF1A;
+  }
+
+  .service::after {
+    /* background-color: #D1D5DB; */
+    width: 1px;
+    height: 100%;
+  }
+
+  .service::before {
+    /* background-color: #D1D5DB; */
+    height: 1px;
+    width: 90%;
+  }
+
+  @media (min-width: 768px) {
+
+    .service::after,
+    .service::before {
+      display: none;
+    }
+  }
+
+  .access-text::before {
+    display: block;
+    content: '';
+    background-color: #D9D9D9;
+    border-radius: 23px;
+    width: 10px;
+    height: 4px;
+  }
+
+  .access-text:hover::before {
+    background-color: #FDBA74;
+    transition: 250ms;
+  }
+
+  .articleBox-img {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    border-bottom-left-radius: 24px !important;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    z-index: -1;
+    opacity: 0;
+    transition: 500ms all;
+  }
+
+  .articleBox-hover:hover {
+    /* transition: 500ms all; */
+
+    .articleBox-img {
+      /* transition: 500ms all; */
+      background-image: linear-gradient(#FED7AA, #FDBA74);
+      opacity: 0.8;
+      z-index: 2;
+    }
+
+
+  }
+
+}
